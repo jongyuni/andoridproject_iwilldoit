@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "22552031292",
+    "project_id": "iwilldoit-b3409",
+    "storage_bucket": "iwilldoit-b3409.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22552031292:android:fee63e6f25e3c1a0b91339",
+        "android_client_info": {
+          "package_name": "com.example.iwilldoit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "22552031292-j71fa75gthdvb24f824ehemd4am5thih.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.iwilldoit",
+            "certificate_hash": "172ceac3899e0165f51abc2218afa626139ca639"
+          }
+        },
+        {
+          "client_id": "22552031292-c5pt6u3t39euj8t2sipu7kn71vhtnuhi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIYp5eOmWnP26kAj2UpdDX_jkVGGeVENU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "22552031292-c5pt6u3t39euj8t2sipu7kn71vhtnuhi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
