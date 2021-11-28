@@ -35,7 +35,8 @@ public class YearFragment extends Fragment {
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                AddDialog adddialog = new AddDialog(getActivity());
+                adddialog.callDialog();
             }
         });
 
