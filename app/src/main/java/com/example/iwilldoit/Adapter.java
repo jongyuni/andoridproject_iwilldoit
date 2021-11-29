@@ -1,6 +1,7 @@
 package com.example.iwilldoit;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,10 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class Adapter extends RecyclerView.Adapter<ViewHolder> {
-    private ArrayList<String> arrayList;
+
+    public static ArrayList<YearDreamInfo> yearDreamInfos;
 
     public Adapter() {
-        arrayList = new ArrayList<>();
+        yearDreamInfos = new ArrayList<>();
     }
 
     @NonNull
@@ -31,17 +33,17 @@ public class Adapter extends RecyclerView.Adapter<ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String text = arrayList.get(position);
-        holder.textView.setText(text);
+        YearDreamInfo text = yearDreamInfos.get(position);
+        holder.textView.setText(text.dream);
     }
 
     @Override
     public int getItemCount() {
-        return arrayList.size();
+        return yearDreamInfos.size();
     }
 
     // 데이터를 입력
-    public void setArrayData(String strData) {
-        arrayList.add(strData);
+    public void setArrayData(YearDreamInfo tmpData) {
+        yearDreamInfos.add(tmpData);
     }
 }

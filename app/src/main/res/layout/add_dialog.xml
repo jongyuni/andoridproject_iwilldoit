@@ -2,7 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="300dp"
-    android:layout_height="200dp"
+    android:layout_height="230dp"
     android:orientation="vertical"
     android:gravity="center"
     android:background="#EAF4FF">
@@ -16,25 +16,34 @@
         android:text="당신의 버킷리스트는?"
         android:layout_marginBottom="20dp">
     </TextView>
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:id="@+id/txt_dream"
+        android:hint="여행가기"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        android:weightSum="10">
+        android:weightSum="10"
+        android:layout_marginTop="20dp">
         <Button
             android:id="@+id/btn_ok"
             android:text="확인"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="5">
+            android:layout_weight="4">
         </Button>
         <Button
             android:id="@+id/btn_cancel"
             android:text="취소"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="5">
+            android:layout_weight="4">
         </Button>
     </LinearLayout>
 
