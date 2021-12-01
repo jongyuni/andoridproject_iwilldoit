@@ -5,9 +5,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 
@@ -33,8 +37,22 @@ public class Adapter extends RecyclerView.Adapter<ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        YearDreamInfo text = yearDreamInfos.get(position);
+        final YearDreamInfo text = yearDreamInfos.get(position);
         holder.textView.setText(text.dream);
+        holder.checkBox.setOnCheckedChangeListener(null);
+        holder.checkBox.setChecked(text.done);
+
+        holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                text.done = isChecked;
+                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+                db.collection(firebaseAuth.getUid())
+                        .document(Integer.toString(position+1))
+                        .update("done",isChecked);
+            }
+        });
     }
 
     @Override
