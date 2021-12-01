@@ -30,7 +30,7 @@
             android:id="@+id/btn_Year"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="4"
             android:onClick="yearClick"
             android:text="2021" />
 
@@ -38,9 +38,15 @@
             android:id="@+id/btn_Life"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="4"
             android:onClick="lifeClick"
             android:text="LIFE" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="logoutClick"
+            android:text="로그아웃"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
