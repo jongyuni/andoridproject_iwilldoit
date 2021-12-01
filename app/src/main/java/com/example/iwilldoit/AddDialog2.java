@@ -2,29 +2,22 @@ package com.example.iwilldoit;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import static android.content.ContentValues.TAG;
 import static java.lang.Boolean.FALSE;
 
-public class AddDialog {
+public class AddDialog2 {
 
     private Context context;
 
-    public AddDialog (Context context){
+    public AddDialog2 (Context context){
         this.context = context;
     }
 
@@ -46,10 +39,10 @@ public class AddDialog {
             {
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                 FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-                YearDreamInfo tmp = new YearDreamInfo(txt_dream.getText().toString(),FALSE);
-                Adapter adapter = new Adapter();
+                LifeDreamInfo tmp = new LifeDreamInfo(txt_dream.getText().toString(),FALSE);
+                Adapter2 adapter = new Adapter2();
                 adapter.setArrayData(tmp);
-                db.collection(firebaseAuth.getUid())
+                db.collection(firebaseAuth.getUid() + "2")
                         .document(txt_dream.getText().toString())
                         .set(tmp);
                 adapter.notifyDataSetChanged();

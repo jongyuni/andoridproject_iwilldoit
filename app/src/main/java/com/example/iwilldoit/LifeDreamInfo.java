@@ -1,14 +1,14 @@
 package com.example.iwilldoit;
 
-public class YearDreamInfo {
+public class LifeDreamInfo {
+
     public String dream;
     public Boolean done;
 
-    YearDreamInfo(){ }
+    LifeDreamInfo(){ }
 
-    YearDreamInfo(String dream, Boolean done){
+    LifeDreamInfo(String dream, Boolean done){
         this.dream = dream.trim();
         this.done = done;
-
     }
 }

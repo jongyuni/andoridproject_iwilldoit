@@ -29,11 +29,5 @@ public class ViewHolder extends RecyclerView.ViewHolder {
             }
         });
 
-        /*checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
-            }
-        });*/
     }
 }

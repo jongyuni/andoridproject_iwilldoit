@@ -1,7 +1,6 @@
 package com.example.iwilldoit;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,12 +14,11 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 
-public class Adapter extends RecyclerView.Adapter<ViewHolder> {
+public class Adapter2 extends RecyclerView.Adapter<ViewHolder>{
+    public static ArrayList<LifeDreamInfo> lifeDreamInfos;
 
-    public static ArrayList<YearDreamInfo> yearDreamInfos;
-
-    public Adapter() {
-        yearDreamInfos = new ArrayList<>();
+    public Adapter2() {
+        lifeDreamInfos = new ArrayList<>();
     }
 
     @NonNull
@@ -37,7 +35,7 @@ public class Adapter extends RecyclerView.Adapter<ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        final YearDreamInfo text = yearDreamInfos.get(position);
+        final LifeDreamInfo text = lifeDreamInfos.get(position);
         holder.textView.setText(text.dream);
         holder.checkBox.setOnCheckedChangeListener(null);
         holder.checkBox.setChecked(text.done);
@@ -48,7 +46,7 @@ public class Adapter extends RecyclerView.Adapter<ViewHolder> {
                 text.done = isChecked;
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                 FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-                db.collection(firebaseAuth.getUid())
+                db.collection(firebaseAuth.getUid()+"2")
                         .document(text.dream)
                         .update("done",isChecked);
             }
@@ -57,11 +55,10 @@ public class Adapter extends RecyclerView.Adapter<ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return yearDreamInfos.size();
+        return lifeDreamInfos.size();
     }
 
     // 데이터를 입력
-    public void setArrayData(YearDreamInfo tmpData) {
-        yearDreamInfos.add(tmpData);
+    public void setArrayData(LifeDreamInfo tmpData) { lifeDreamInfos.add(tmpData);
     }
 }
