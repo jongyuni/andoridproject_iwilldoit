@@ -9,26 +9,25 @@
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Done" />
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="230dp"
+        android:layout_width="280dp"
         android:layout_height="match_parent"
         android:layout_marginLeft="20dp"
         android:gravity="center_vertical"
         android:text="text text text text"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:fontFamily="@font/kyobo"
+        android:textColor="#202020"/>
 
-    <Button
+    <ImageButton
+        android:id="@+id/button"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginRight="10dp"
-        android:text="delete"
-        android:id="@+id/button"/>
-
-
+        android:src="@drawable/minusxml" />
 
 
 </LinearLayout>

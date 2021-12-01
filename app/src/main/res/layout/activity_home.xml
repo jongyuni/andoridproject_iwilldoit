@@ -32,7 +32,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="4"
             android:onClick="yearClick"
-            android:text="2021" />
+            android:text="2021"
+            android:fontFamily="@font/kyobo" />
 
         <Button
             android:id="@+id/btn_Life"
@@ -40,13 +41,16 @@
             android:layout_height="wrap_content"
             android:layout_weight="4"
             android:onClick="lifeClick"
-            android:text="LIFE" />
+            android:text="LIFE"
+            android:fontFamily="@font/kyobo" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="logoutClick"
-            android:text="로그아웃"/>
+            android:text="로그아웃"
+            android:fontFamily="@font/kyobo"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

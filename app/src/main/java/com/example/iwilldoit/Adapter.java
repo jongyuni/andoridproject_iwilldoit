@@ -6,10 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -51,6 +53,24 @@ public class Adapter extends RecyclerView.Adapter<ViewHolder> {
                 db.collection(firebaseAuth.getUid())
                         .document(text.dream)
                         .update("done",isChecked);
+            }
+        });
+
+        holder.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+                db.collection(firebaseAuth.getUid())
+                        .document(text.dream)
+                        .delete()
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                yearDreamInfos.remove(text.dream);
+                                notifyDataSetChanged();
+                            }
+                        });
             }
         });
     }
