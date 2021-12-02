@@ -56,7 +56,7 @@ public class Adapter extends RecyclerView.Adapter<ViewHolder> {
             }
         });
 
-        holder.button.setOnClickListener(new View.OnClickListener() {
+        holder.btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseFirestore db = FirebaseFirestore.getInstance();

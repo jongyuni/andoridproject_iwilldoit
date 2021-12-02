@@ -9,6 +9,7 @@ import android.widget.CompoundButton;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -49,6 +50,24 @@ public class Adapter2 extends RecyclerView.Adapter<ViewHolder>{
                 db.collection(firebaseAuth.getUid()+"2")
                         .document(text.dream)
                         .update("done",isChecked);
+            }
+        });
+
+        holder.btn_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+                db.collection(firebaseAuth.getUid())
+                        .document(text.dream)
+                        .delete()
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                lifeDreamInfos.remove(text.dream);
+                                notifyDataSetChanged();
+                            }
+                        });
             }
         });
     }
