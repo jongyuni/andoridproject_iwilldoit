@@ -5,27 +5,22 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-
 import static android.content.ContentValues.TAG;
-
+// 올해 버킷리스트 관리 화면
 public class YearFragment extends Fragment{
+
     Adapter adapter;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
@@ -41,6 +36,7 @@ public class YearFragment extends Fragment{
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.VERTICAL, false));
         adapter = new Adapter();
 
+        // DB에서 데이터 가져오기
         db.collection(firebaseAuth.getUid()).get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -58,6 +54,7 @@ public class YearFragment extends Fragment{
                 });
 
         recyclerView.setAdapter(adapter);
+
         // Add 버튼 클릭
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +65,6 @@ public class YearFragment extends Fragment{
         });
 
         return rootView;
-
     }
 
 }

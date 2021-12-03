@@ -1,12 +1,10 @@
 package com.example.iwilldoit;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,7 +14,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
-
+//올해 버킷리스트를 위한 어댑터
 public class Adapter extends RecyclerView.Adapter<ViewHolder> {
 
     public static ArrayList<YearDreamInfo> yearDreamInfos;
@@ -44,6 +42,7 @@ public class Adapter extends RecyclerView.Adapter<ViewHolder> {
         holder.checkBox.setOnCheckedChangeListener(null);
         holder.checkBox.setChecked(text.done);
 
+        // 체크박스
         holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -56,6 +55,10 @@ public class Adapter extends RecyclerView.Adapter<ViewHolder> {
             }
         });
 
+        // 검색 버튼의 경우
+        // ViewHolder.java에 구현되어있음
+
+        // 삭제 버튼
         holder.btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,6 +78,7 @@ public class Adapter extends RecyclerView.Adapter<ViewHolder> {
         });
     }
 
+    // 데이터 수 반환
     @Override
     public int getItemCount() {
         return yearDreamInfos.size();

@@ -7,12 +7,10 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
-
 import static java.lang.Boolean.FALSE;
-
+// 인생 버킷리스트에 추가를 위한 다이얼로그
 public class AddDialog2 {
 
     private Context context;

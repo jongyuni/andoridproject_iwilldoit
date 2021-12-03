@@ -2,12 +2,10 @@ package com.example.iwilldoit;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
-
 import com.example.iwilldoit.databinding.ActivitySignupBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -28,6 +26,7 @@ public class SignupActivity extends AppCompatActivity {
         setContentView(view);
     }
 
+    // 회원가입 완료 버튼 클릭시
     public void confirmClick(View view){
 
         String id = binding.userId.getText().toString().trim();

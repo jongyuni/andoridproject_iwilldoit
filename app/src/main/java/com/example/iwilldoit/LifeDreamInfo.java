@@ -1,5 +1,6 @@
 package com.example.iwilldoit;
 
+// 인생 버킷리스트 정보
 public class LifeDreamInfo {
 
     public String dream;

@@ -2,24 +2,15 @@ package com.example.iwilldoit;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import static android.content.ContentValues.TAG;
 import static java.lang.Boolean.FALSE;
-
+// 올해 버킷리스트에 추가를 위한 다이얼로그
 public class AddDialog {
 
     private Context context;

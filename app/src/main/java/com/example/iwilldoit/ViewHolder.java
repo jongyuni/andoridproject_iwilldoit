@@ -4,13 +4,9 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.recyclerview.widget.RecyclerView;
 
 public class ViewHolder extends RecyclerView.ViewHolder {
@@ -27,6 +23,7 @@ public class ViewHolder extends RecyclerView.ViewHolder {
         checkBox = itemView.findViewById(R.id.checkBox);
         btn_search = itemView.findViewById(R.id.btn_search);
 
+        // 검색 버튼
         btn_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
