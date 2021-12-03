@@ -2,8 +2,9 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:orientation="horizontal">
+    android:layout_height="60dp"
+    android:orientation="horizontal"
+    android:background="@drawable/itembackground">
 
 
     <CheckBox
@@ -19,6 +20,7 @@
         android:gravity="center_vertical"
         android:text="text text text text"
         android:textSize="20dp"
+        android:textStyle="bold"
         android:fontFamily="@font/kyobo"
         android:textColor="#202020"/>
 
@@ -27,14 +29,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="5dp"
-        android:background="@drawable/searchxml"/>
+        android:background="@drawable/searchxml"
+        android:layout_gravity="center"/>
 
     <ImageButton
         android:id="@+id/btn_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="5dp"
-        android:background="@drawable/minusxml"/>
+        android:background="@drawable/minusxml"
+        android:layout_gravity="center"/>
 
 
 </LinearLayout>
